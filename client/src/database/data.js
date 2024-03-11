@@ -10,38 +10,38 @@ export default [
     },
     {
         id: 2,
-        question : "National flower of india is?",
+        question : "National animal of india is?",
         options: [
-            'Lotius',
-            'Lotus',
-            'LEOTEE',
+            'Tiger',
+            'Lion',
+            'snake',
         ]
     },
     {
         id: 3,
-        question : "National flower of india is?",
+        question : "National tree of india is?",
         options: [
-            'Lotius',
-            'Lotus',
-            'LEOTEE',
+            'Mango',
+            'Banyan',
+            'Peeple',
         ]
     },
     {
         id: 4,
-        question : "National flower of india is?",
+        question : "National fruit of india is?",
         options: [
-            'Lotius',
-            'Lotus',
-            'LEOTEE',
+            'Grapes',
+            'Pomogranate',
+            'Mango',
         ]
     },
     {
         id: 5,
-        question : "National flower of india is?",
+        question : "National sport of india is?",
         options: [
-            'Lotius',
-            'Lotus',
-            'LEOTEE',
+            'Chess',
+            'Hockey',
+            'Cricket',
         ]
     },
 ]

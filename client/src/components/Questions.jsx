@@ -1,25 +1,39 @@
 import React, { useEffect, useState } from 'react'
-import data from '../database/data';
+
+
+import { useSelector } from 'react-redux';
+// Custom HOOK
+import { useFetchQuestion } from '../hooks/FetchQuestions';
+
+
 const Questions = () => {
 
   const [checked,setChecked]=useState(undefined);
+  const [{isLoading,apiData,serverError}]=useFetchQuestion();
 
-  const question=data[0]
 
-  useEffect(()=>{
-    console.log(data)
-  })
+  const questions=useSelector(state => state.questions.queue[state.questions.trace])
+  const trace= useSelector(state => state.questions.trace)
+    useEffect(()=>{
+        console.log(trace)
+    })
 
   function onSelect(){
-   console.log('dd')
+   //console.log('')
   }
+
+  if(isLoading) return <h3 className='text-light'>isLoading</h3>
+  if(serverError) return <h3 className='text-light'>{serverError} || "Unknown error" </h3>
+
   return (
     <div className='questions'>
-      <h2 className='text-light'>{question.question}</h2>
+      <h2 className='text-light'>{questions?.question}</h2>
+      {/* this question mark after question tells that 
+      "we only want to access the property when we have that property" */}
 
-      <ul key={question.id}>
+      <ul key={questions?.id}>
         {
-          question.options.map((q, i) => (
+          questions?.options.map((q, i) => (
         <li key={i}>
           <input
            type="radio" 
