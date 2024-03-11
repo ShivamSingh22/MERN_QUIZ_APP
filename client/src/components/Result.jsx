@@ -2,12 +2,22 @@ import React from 'react'
 import '../styles/Result.css'
 import {Link} from 'react-router-dom'
 import ResultTable from './ResultTable.jsx'
+import { useDispatch } from 'react-redux'
+
+
+//importing actions
+import { resetAllAction } from '../redux/question_reducer'
+import { resetResultAction } from '../redux/result_reducer'
 
 const result = () => {
 
+  const dispatch=useDispatch();
+
   function restart(){
-    console.log('HELLO')
+    dispatch(resetAllAction());
+    dispatch(resetResultAction());
   }
+
   return (
     <div className='container'>
       <h1 className='title text-light'>Lets Quiz!</h1>
