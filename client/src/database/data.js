@@ -3,9 +3,9 @@ export default [
         id: 1,
         question : "National flower of india is?",
         options: [
-            'Lotius',
+            'SunFlower',
             'Lotus',
-            'LEOTEE',
+            'Marigold',
         ]
     },
     {
@@ -45,3 +45,5 @@ export default [
         ]
     },
 ]
+
+export const answers=[1,0,1,2,1];

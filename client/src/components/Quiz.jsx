@@ -15,7 +15,7 @@ import { useSelector, useDispatch } from "react-redux";
 const quiz = () => {
 
     const [check,setChecked] = useState(undefined);
-    const result=useSelector((state) => state.result.result);
+    const result= useSelector((state) => state.result.result);
     const trace = useSelector((state) => state.questions.trace);
     const queue = useSelector((state) => state.questions.queue);
     const dispatch = useDispatch();
@@ -27,8 +27,12 @@ const quiz = () => {
   function onNext() {
     if (trace < queue.length) {
       dispatch(MoveNextQuestion());
-      dispatch(PushAnswer(check));
+      
+      if(result.length<=trace){
+        dispatch(PushAnswer(check));
+      }
     }
+    setChecked(undefined);
   }
 
   function onPrev() {
@@ -56,10 +60,10 @@ const quiz = () => {
       <Questions onChecked={onChecked} />
 
       <div className="grid">
-        <button className="btn prev" onClick={onPrev}>
+        { trace > 0 ? <button className="btn prev" onClick={onPrev}>
           Prev
-        </button>{" "}
-        : <div></div>
+        </button>:<div></div>}
+        
         <button className="btn next" onClick={onNext}>
           Next
         </button>
