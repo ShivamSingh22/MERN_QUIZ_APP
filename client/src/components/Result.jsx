@@ -55,7 +55,7 @@ const result = () => {
         </div>
         <div className='flex'>
           <span>Quiz Result</span>
-          <span className='bold'>{flag ? "Passed" : "Failed"}</span>
+          <span style={{color:`${flag? "#2aff95":"#ff2a66"}`}} className='bold'>{flag ? "Passed" : "Failed"}</span>
         </div>
 
       </div>

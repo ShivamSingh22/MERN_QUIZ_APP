@@ -13,12 +13,10 @@ const Questions = ({onChecked}) => {
   const [checked,setChecked]=useState(undefined);
   const [{isLoading,apiData,serverError}]=useFetchQuestion();
 
-  //useSelector(state=> state);
-
   const result =useSelector(state=> state.result.result)
   const questions=useSelector(state => state.questions.queue[state.questions.trace])
   const dispatch=useDispatch()
-
+  useSelector(state=> console.log(state));
 
   const trace= useSelector(state => state.questions.trace)
 
