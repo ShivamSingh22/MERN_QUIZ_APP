@@ -48,6 +48,10 @@ const result = () => {
       <h1 className='title text-light'>Lets Quiz!</h1>
 
       <div className='result flex-center'>
+      <div className='flex'>
+          <span>Username :</span>
+          <span className='bold'>{userId || ""}</span>
+        </div>
         <div className='flex'>
           <span>Total Quiz Points :</span>
           <span className='bold'>{totalPoints || 0}</span>
