@@ -16,7 +16,7 @@ const Questions = ({onChecked}) => {
   const result =useSelector(state=> state.result.result)
   const questions=useSelector(state => state.questions.queue[state.questions.trace])
   const dispatch=useDispatch()
-  useSelector(state=> console.log(state));
+  //useSelector(state=> console.log(state));
 
   const trace= useSelector(state => state.questions.trace)
 
@@ -32,7 +32,7 @@ const Questions = ({onChecked}) => {
   }
 
   if(isLoading) return <h3 className='text-light'>isLoading</h3>
-  if(serverError) return <h3 className='text-light'>{serverError} || "Unknown error" </h3>
+  if(serverError) return <h3 className='text-light'>{serverError.message} || "Unknown error" </h3>
 
   return (
     <div className='questions'>
